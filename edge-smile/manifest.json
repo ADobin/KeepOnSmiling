@@ -1,0 +1,27 @@
+{
+  "name": "KeepOnSmiling",
+  "author": "Alex Dobin",
+  "version": "1.0",
+  "description": "Redirects amazon.com links to smile.amazon.com",
+  "icons": {
+    "48": "images/smiley_48.png",
+    "128": "images/smiley_128.png",
+    "176": "images/smiley_176.png"
+  },
+  "permissions": [
+    "*://*.amazon.com/*",
+    "*://*.amazon.de/*",
+    "*://*.amazon.co.uk/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.amazon.com/*",
+        "*://*.amazon.de/*",
+        "*://*.amazon.co.uk/*"
+      ],
+      "js": ["edge-smile.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
